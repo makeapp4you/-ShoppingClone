@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 
-export default class Menu extends Component {
+export default class OrderHistory extends Component {
     goBack() {
         const { navigator } = this.props; 
         navigator.pop();
@@ -10,7 +10,7 @@ export default class Menu extends Component {
     render() {
         return (
             <View style={styles.wrapper}> 
-                 <Text> This is Menu</Text>
+                <Text> This is OrderHistory</Text>
                 <TouchableOpacity onPress={this.goBack.bind(this)}> 
                     <Text> Go to back</Text>
                 </TouchableOpacity>
@@ -22,7 +22,7 @@ export default class Menu extends Component {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1, 
-        backgroundColor: '#F5F9FB',
+        backgroundColor: '#b2cecf',
         paddingTop: 20
     }
 });
