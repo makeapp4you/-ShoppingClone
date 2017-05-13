@@ -13,14 +13,14 @@ export default class Main extends Component {
     render() {
         const { navigator } = this.props;
         return (
-           <Drawer 
-            ref={(ref) => { this.drawer = ref; }}
-            content={<Menu navigator={navigator} />}
-            openDrawerOffset={0.4}
-            tapToClose
-           >
-           <Shop open={this.openControlPanel.bind(this)} />
-           </Drawer>
+            <Drawer
+                ref={(ref) => { this.drawer = ref; }}
+                content={<Menu navigator={navigator} />}
+                openDrawerOffset={0.4}
+                tapToClose
+            >
+                <Shop open={this.openControlPanel.bind(this)} />
+            </Drawer>
         );
     }
 }
