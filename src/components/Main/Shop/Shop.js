@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Dimensions, TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 import Home from './Home/Home';
@@ -19,9 +19,8 @@ import SearchIcon1 from '../../../images/icon/Search1.png';
 import ContactIcon from '../../../images/icon/Contact.png';
 import ContactIcon1 from '../../../images/icon/Contact1.png';
 
+import Header from './Header/Header';
 
-
-const { height } = Dimensions.get('window');
 export default class Shop extends Component {
     constructor(props) {
         super(props);
@@ -35,11 +34,7 @@ export default class Shop extends Component {
         const { imageIcon } = styles;
         return (
             <View style={{ flex: 1 }}>
-                <View style={{ height: height / 8 }}>
-                    <TouchableOpacity onPress={this.openMenu.bind(this)} >
-                        <Text>Open Menu</Text>
-                    </TouchableOpacity>
-                </View>
+               <Header onOpen={this.openMenu.bind(this)} />
                 <TabNavigator>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'home'}
