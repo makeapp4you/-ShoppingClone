@@ -1,49 +1,26 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import Menu from './Menu';
+import Shop from './Shop/Shop';
+
+import Drawer from 'react-native-drawer';
 
 
 export default class Main extends Component {
-    gotoMenu() {
-        const { navigator } = this.props;
-        navigator.push({ name: 'MENU' });
-    }
-    gotoAuthentication() {
-        const { navigator } = this.props;
-        navigator.push({ name: 'AUTHENTICATION' });
-    }
-    gotoChangeInfo() {
-        const { navigator } = this.props;
-        navigator.push({ name: 'CHANGE-INFO' });
-    }
-    gotoOrderHistory() {
-        const { navigator } = this.props;
-        navigator.push({ name: 'ORDER-HISTORY' });
+    openControlPanel() {
+        this.drawer.open();
     }
     render() {
+        const { navigator } = this.props;
         return (
-            <View style={styles.wrapper}>
-                <Text> This is Main</Text>
-                <TouchableOpacity onPress={this.gotoMenu.bind(this)}>
-                    <Text>Goto Menu</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={this.gotoAuthentication.bind(this)}>
-                    <Text>Goto AUTHENTICATION</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={this.gotoOrderHistory.bind(this)}>
-                    <Text>Goto HISTORY</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={this.gotoChangeInfo.bind(this)}>
-                    <Text>Goto CHANGE INFO</Text>
-                </TouchableOpacity>
-            </View>
+           <Drawer 
+            ref={(ref) => { this.drawer = ref; }}
+            content={<Menu navigator={navigator} />}
+            openDrawerOffset={0.4}
+            tapToClose
+           >
+           <Shop open={this.openControlPanel.bind(this)} />
+           </Drawer>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    wrapper: {
-        flex: 1,
-        backgroundColor: '#F5C815',
-        paddingTop: 20
-    }
-});
