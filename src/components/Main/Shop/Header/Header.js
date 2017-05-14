@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     row1: {
         justifyContent: 'space-between',
         flexDirection: 'row',
-        marginBottom: 10,
+        marginBottom: 5,
         paddingLeft: 8,
         paddingRight: 8
 
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
     inputStyle: {
         height: height / 23,
         borderColor: 'gray',
-        borderWidth: 1,
-        paddingLeft: 10
+        paddingLeft: 10,
+        backgroundColor: '#fff'
     },
     imageStyle: {
         width: 30,

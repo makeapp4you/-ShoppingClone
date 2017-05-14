@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
+import Collection from './Collection';
 
 export default class Home extends Component {
     render() {
         return (
             <View style={styles.wrapper}> 
-                <Text> This is Home</Text>
+                <Collection />
+                <Collection />
+                <Collection />
             </View>
+            
         );
     }
 }
@@ -15,7 +19,6 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1, 
-        backgroundColor: '#52859f',
-        paddingTop: 20
+        backgroundColor: '#dad5d2'
     }
 });
