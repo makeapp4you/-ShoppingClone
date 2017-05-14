@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 
 import Collection from './Collection';
+import Category from './Category';
 
 export default class Home extends Component {
     render() {
         return (
-            <View style={styles.wrapper}> 
+            <ScrollView style={styles.wrapper}> 
                 <Collection />
-                <Collection />
-                <Collection />
-            </View>
+                <Category />
+            </ScrollView>
             
         );
     }
